@@ -15,36 +15,65 @@ contributions:
     - id: napari-spine-seg.write_single_image
       python_name: napari_spine_seg._writer:write_single_image
       title: Save image data with Spine Seg
-    - id: napari-spine-seg.make_container_widget
-      python_name: napari_spine_seg:ImageThreshold
-      title: Make threshold Container widget
-    - id: napari-spine-seg.make_magic_widget
-      python_name: napari_spine_seg:threshold_magic_widget
-      title: Make threshold magic widget
-    - id: napari-spine-seg.make_function_widget
-      python_name: napari_spine_seg:threshold_autogenerate_widget
-      title: Make threshold function widget
-    - id: napari-spine-seg.make_qwidget
-      python_name: napari_spine_seg:ExampleQWidget
-      title: Make example QWidget
-  readers:
-    - command: napari-spine-seg.get_reader
-      accepts_directories: false
-      filename_patterns: ['*.npy']
-  writers:
-    - command: napari-spine-seg.write_multiple
-      layer_types: ['image*','labels*']
-      filename_extensions: []
-    - command: napari-spine-seg.write_single_image
-      layer_types: ['image']
-      filename_extensions: ['.npy']
+    - id: napari-spine-seg.open_seg_widget
+      python_name: napari_spine_seg.SegmentationWidget:SegmentationWidget
+      title: Segmentation Widget
+
   widgets:
-    - command: napari-spine-seg.make_container_widget
-      display_name: Container Threshold
-    - command: napari-spine-seg.make_magic_widget
-      display_name: Magic Threshold
-    - command: napari-spine-seg.make_function_widget
-      autogenerate: true
-      display_name: Autogenerate Threshold
-    - command: napari-spine-seg.make_qwidget
-      display_name: Example QWidget
+    - command: napari-spine-seg.open_seg_widget
+      display_name: Segmentation Widget
+
+
+
+
+
+# contributions:
+#   commands:
+#     - id: napari-spine-seg.get_reader
+#       python_name: napari_spine_seg._reader:napari_get_reader
+#       title: Open data with Spine Seg
+#     - id: napari-spine-seg.write_multiple
+#       python_name: napari_spine_seg._writer:write_multiple
+#       title: Save multi-layer data with Spine Seg
+#     - id: napari-spine-seg.write_single_image
+#       python_name: napari_spine_seg._writer:write_single_image
+#       title: Save image data with Spine Seg
+#     - id: napari-spine-seg.make_container_widget
+#       python_name: napari_spine_seg:ImageThreshold
+#       title: Make threshold Container widget
+#     - id: napari-spine-seg.make_magic_widget
+#       python_name: napari_spine_seg:threshold_magic_widget
+#       title: Make threshold magic widget
+#     - id: napari-spine-seg.make_function_widget
+#       python_name: napari_spine_seg:threshold_autogenerate_widget
+#       title: Make threshold function widget
+#     - id: napari-spine-seg.make_qwidget
+#       python_name: napari_spine_seg:ExampleQWidget
+#       title: Make example QWidget
+#     - id: napari-spine-seg.say_hello
+#       python_name: napari_spine_seg:hello_test
+#       title: Say hello
+#   readers:
+#     - command: napari-spine-seg.get_reader
+#       accepts_directories: false
+#       filename_patterns: ['*.npy']
+#   writers:
+#     - command: napari-spine-seg.write_multiple
+#       layer_types: ['image*','labels*']
+#       filename_extensions: []
+#     - command: napari-spine-seg.write_single_image
+#       layer_types: ['image']
+#       filename_extensions: ['.npy']
+#   widgets:
+#     - command: napari-spine-seg.make_container_widget
+#       display_name: Container Threshold
+#     - command: napari-spine-seg.make_magic_widget
+#       display_name: Magic Threshold
+#     - command: napari-spine-seg.make_function_widget
+#       autogenerate: true
+#       display_name: Autogenerate Threshold
+#     - command: napari-spine-seg.make_qwidget
+#       display_name: Example QWidget
+#     - command: napari-spine-seg.say_hello
+#       display_name: Say Hello Widget
+#       autogenerate: true

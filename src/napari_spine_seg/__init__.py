@@ -21,3 +21,9 @@ __all__ = (
     "threshold_autogenerate_widget",
     "threshold_magic_widget",
 )
+
+from napari.utils.notifications import show_info
+
+
+def hello_test():
+    show_info("Hello from napari-spine-seg!")
